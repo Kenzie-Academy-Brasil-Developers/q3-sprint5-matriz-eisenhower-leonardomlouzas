@@ -7,9 +7,9 @@ from app.controllers.categories_controller import (
 )
 
 
-db = Blueprint("category", __name__, url_prefix="/categories")
+db = Blueprint("category", __name__)
 
-db.get("")(retrieve_categories)
-db.post("")(create_category)
-db.patch("<category_id>")(fix_category)
-db.delete("<category_id>")(remove_category)
+db.get("/")(retrieve_categories)
+db.post("/categories")(create_category)
+db.patch("/categories/<category_id>")(fix_category)
+db.delete("/categories/<category_id>")(remove_category)

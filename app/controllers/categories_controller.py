@@ -18,6 +18,7 @@ def retrieve_categories():
         {"id": category.id, "name": category.name, "description": category.description}
         for category in categories
     ]
+
     categories_id = [category["id"] for category in categories]
 
     for index, id in enumerate(categories_id):
